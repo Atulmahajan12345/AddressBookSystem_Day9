@@ -3,12 +3,10 @@ package com.bridgelabz.addressbook;
 import java.util.Scanner;
 
 public class AddressBookService {
-
 	Contact[] allContacts = new Contact[20];
-	private int index = 0 ;
+	private int index = 0;
 
-	public Contact addContact()
-	{
+	public Contact addContact() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter First Name");
 		String firstName = scanner.next();
@@ -26,19 +24,30 @@ public class AddressBookService {
 		int phoneNumber = scanner.nextInt();
 		System.out.println("Enter Email");
 		String email = scanner.next();
-		Contact contact = new Contact( firstName, lastName, address, city, state, zip, phoneNumber, email);
-		allContacts[index++]= contact;
+		Contact contact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+		allContacts[index++] = contact;
 		System.out.println("New Contact Added Sucessfully");
 		return contact;
 	}
 
+	public boolean deleteContact(int phoneNumber) {
 
-	public boolean editContact(int phoneNumber)
-	{
-		for (int i = 0; i < allContacts.length; i++) 
-		{
-			if(allContacts[i] != null && allContacts[i].getPhoneNumber() == phoneNumber ) 
-			{
+		for (int i = 0; i < allContacts.length; i++) {
+			if (allContacts[i] != null && allContacts[i].getPhoneNumber() == phoneNumber) {
+				for (int j = i; j < allContacts.length - 2; j++) {
+					allContacts[j] = allContacts[j + 1];
+				}
+				System.out.println("Contact deleted SuccessFully");
+				return true;
+			}
+
+		}
+		return false;
+	}
+
+	public boolean editContact(int phoneNumber) {
+		for (int i = 0; i < allContacts.length; i++) {
+			if (allContacts[i] != null && allContacts[i].getPhoneNumber() == phoneNumber) {
 				Scanner scanner = new Scanner(System.in);
 				System.out.println("Enter First Name");
 				String firstName = scanner.next();
@@ -64,18 +73,12 @@ public class AddressBookService {
 		return false;
 	}
 
-
-	public void diaplayContacts()
-	{
-		for (int i = 0; i < allContacts.length; i++) 
-		{
-			if(allContacts[i] != null) 
-			{
+	public void diaplayContacts() {
+		for (int i = 0; i < allContacts.length; i++) {
+			if (allContacts[i] != null) {
 				System.out.println(allContacts[i]);
 			}
 		}
-	} 
-
+	}
 
 }
-	

@@ -1,15 +1,15 @@
 package com.bridgelabz.addressbook;
 
 public class Contact {
-	 private String firstName;
-	 private String lastname;
-	 private String address;
-	 private String city;
-	 private String state;
-	 private String zip;
-	 private int phoneNumber;
-	 private String email;
-	 
+	private String firstName;
+	private String lastname;
+	private String address;
+	private String city;
+	private String state;
+	private String zip;
+	private int phoneNumber;
+	private String email;
+
 	public Contact(String firstName, String lastname, String address, String city, String state, String zip,
 			int phoneNumber, String email) {
 		super();
@@ -93,9 +93,4 @@ public class Contact {
 		this.email = email;
 	}
 
-
-
-	 
 }
-
-	 
