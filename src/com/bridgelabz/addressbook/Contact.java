@@ -1,7 +1,7 @@
 package com.bridgelabz.addressbook;
 
 public class Contact {
-	private String firstName;
+	 private String firstName;
 	 private String lastname;
 	 private String address;
 	 private String city;
@@ -33,4 +33,4 @@ public class Contact {
 	 
 }
 
-
+	
